@@ -10,6 +10,7 @@ const App = () => {
       }}>
       <GridItem gridArea={"nav"}>
         <NavBar />
+        
       </GridItem>
       <GridItem gridArea={"aside"} display={{ base: "none", lg: "block" }}>
         Aside Bar
