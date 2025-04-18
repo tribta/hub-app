@@ -4,9 +4,10 @@ import { useEffect, useState } from "react";
 
 // creating custom hook: một hook do người dùng tự định nghĩa
 
-interface Game {
+export interface Game {
   id: number;
   name: string;
+  background_image: string;
 }
 
 interface FetchGamesResponse {
