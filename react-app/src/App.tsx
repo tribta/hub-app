@@ -8,18 +8,13 @@ const App = () => {
         base: `"nav nav" "main main"`, // base:320 & lg:1024
         lg: `"nav nav" "aside main"`,
       }}>
-      <GridItem gridArea={"nav"} >
+      <GridItem gridArea={"nav"}>
         <NavBar />
       </GridItem>
-      <GridItem
-        gridArea={"aside"}
-        bg={"gold"}
-        display={{ base: "none", lg: "block" }}>
+      <GridItem gridArea={"aside"} display={{ base: "none", lg: "block" }}>
         Aside Bar
       </GridItem>
-      <GridItem gridArea={"main"} bg={"dodgerblue"}>
-        Main Display
-      </GridItem>
+      <GridItem gridArea={"main"}>Main Display</GridItem>
     </Grid>
   );
 };
