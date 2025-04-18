@@ -1,4 +1,5 @@
 import apiClient from "@/services/api-client";
+import { CanceledError } from "axios";
 import { useEffect, useState } from "react";
 
 // creating custom hook: một hook do người dùng tự định nghĩa
@@ -18,10 +19,16 @@ const useGames = () => {
   const [error, setError] = useState("");
 
   useEffect(() => {
+    const controller = new AbortController();
     apiClient
-      .get<FetchGamesResponse>("/games")
+      .get<FetchGamesResponse>("/games", { signal: controller.signal })
       .then((res) => setGames(res.data.results))
-      .catch((err) => setError(err.message));
+      .catch((err) => {
+        if (err instanceof CanceledError) return;
+        setError(err.message);
+      });
+
+    return () => controller.abort();
   }, []);
 
   return { games, error };
