@@ -35,12 +35,12 @@ const App = () => {
           onSelectedPlatform={(platform) => ({ ...gameQuery, platform })}
         />
         <GenreList
-          onSelectGenre={(genre: any) => setGameQuery({ ...gameQuery, genre })}
+          onSelectGenre={(genre) => setGameQuery({ ...gameQuery, genre })}
           selectedGenre={gameQuery.genre}
         />
       </GridItem>
       <GridItem gridArea={"main"}>
-        <GameGrid />
+        <GameGrid gameQuery={gameQuery} />
       </GridItem>
     </Grid>
   );
