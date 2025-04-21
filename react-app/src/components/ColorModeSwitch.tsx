@@ -5,7 +5,7 @@ import {
   HStack,
   IconButton,
   Skeleton,
-  Text,
+
 } from "@chakra-ui/react";
 import { useColorMode } from "@/components/ui/color-mode";
 import { LuMoon, LuSun } from "react-icons/lu";
@@ -21,7 +21,7 @@ const ColorModeSwitch = () => {
           </IconButton>
         </ClientOnly>
       </HStack>
-      <Text>Dark/Light Mode</Text>
+      {/* <Text>Dark/Light Mode</Text> */}
     </HStack>
   );
 };

@@ -11,7 +11,7 @@ import {
 } from "@chakra-ui/react";
 
 interface Props {
-  onSelectGenre: (geren: Genre) => void;
+  onSelectGenre: (genre: Genre) => void;
   selectedGenre: Genre | null;
 }
 
