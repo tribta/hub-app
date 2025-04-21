@@ -30,16 +30,18 @@ const App = () => {
         <NavBar />
       </GridItem>
       <GridItem gridArea={"aside"} display={{ base: "none", lg: "block" }}>
-        <PlatformSelector
-          selectedPlatform={gameQuery.platform}
-          onSelectedPlatform={(platform) => ({ ...gameQuery, platform })}
-        />
         <GenreList
           onSelectGenre={(genre) => setGameQuery({ ...gameQuery, genre })}
           selectedGenre={gameQuery.genre}
         />
       </GridItem>
       <GridItem gridArea={"main"}>
+        <PlatformSelector
+          selectedPlatform={gameQuery.platform}
+          onSelectedPlatform={(platform) =>
+            setGameQuery({ ...gameQuery, platform })
+          }
+        />
         <GameGrid gameQuery={gameQuery} />
       </GridItem>
     </Grid>
